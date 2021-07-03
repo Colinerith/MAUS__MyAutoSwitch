@@ -3,8 +3,8 @@
 #include <ESP8266WiFi.h>
 #include <ESP8266WebServer.h>
 
-#define FIREBASE_HOST "maus---myautoswitch-default-rtdb.firebaseio.com/" // http달린거 빼고 적어야 됩니다.
-#define FIREBASE_AUTH "F5Ze7srOJBTWFvLxYbr5VNDTghYYFP4wTttQIWPq" // 데이터베이스 비밀번호
+#define FIREBASE_HOST "host"
+#define FIREBASE_AUTH "pw" // 데이터베이스 비밀번호
 
 FirebaseData firebaseData;
 FirebaseJson json;
