@@ -85,13 +85,20 @@ void loop(void){
     Serial.println(value); // 시리얼모니터에 값을 출력
     
     if (value == "1"){
-      Serial.println("ON");
+      //Serial.println("ON");
       myservo.write(90);
+      //Firebase.setStringAsync(firebaseData, "User/a/state", "0");
+      Firebase.setStringAsync(firebaseData, "User/a/state", "0");
+      //Serial.println("off됨");
+       delay(1000); // 1초마다 반복
       //Firebase.Set
     }
     else if (value == "0"){
-      Serial.println("OFF");
+      //Serial.println("OFF");
       myservo.write(0);
+      Firebase.setStringAsync(firebaseData, "User/a/state", "1");
+      delay(1000);
+      //Firebase.setString("User/a/state", "1");
     }
   }
   else
