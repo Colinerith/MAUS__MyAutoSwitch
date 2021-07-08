@@ -6,4 +6,6 @@ DAY2. Firebase 프로젝트 생성 및 연결, 안드로이드 프로젝트 생�
 DAY3. 안드로이드 탭바 구성, 프래그먼트 구성 / arduino state set  
 DAY4. Fragment connection & Switch ImageButton  
 DAY5. Android Firebase data Read, write, ui update (Switch page)  
+DAY6. Timer setting1  
+DAY7. Timer setting2  
 
