@@ -8,5 +8,6 @@ DAY4. Fragment connection & Switch ImageButton
 DAY5. Android Firebase data Read, write, ui update (Switch page)  
 DAY6. Timer setting1  
 DAY7. Timer setting2  
-DAY8. Switch & App Icon & Splash Design
-
+DAY8. Switch & App Icon & Splash Design  
+DAY9. Timer Fragment - Add / Modify Timer
+DAY10. Timer Fragment - Add / Modify Timer  
