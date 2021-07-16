@@ -11,3 +11,4 @@ DAY7. Timer setting2
 DAY8. Switch & App Icon & Splash Design  
 DAY9. Timer Fragment - Add / Modify Timer  
 DAY10. Timer Fragment - Add / Modify Timer  
+DAY11. Timer Fragment - Delete Timer  
