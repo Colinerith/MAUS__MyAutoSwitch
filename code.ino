@@ -3,7 +3,7 @@
 #include <ESP8266WiFi.h>
 //#include <ESP8266WebServer.h>
 
-#define FIREBASE_HOST ""
+#define FIREBASE_HOST "/"
 #define FIREBASE_AUTH "" // 데이터베이스 비밀번호
 
 FirebaseData firebaseData;
@@ -34,7 +34,7 @@ void setup(void){
   Firebase.reconnectWiFi(true);
 
   myservo.attach(D5);   // Servo attached to D5 pin
-  myservo.write(0);
+  //myservo.write(0);
 }
 int flag = 0; //0:off, 1:on
 
@@ -45,7 +45,7 @@ void loop(void){
     //Serial.println(myservo.read());
     if (value == "0"){
       if(flag == 1){ // on에서 off로 바뀐거면
-        myservo.write(40);
+        myservo.write(130);
         delay(1000);
         myservo.write(90);
         //Firebase.setStringAsync(firebaseData, "Switch/a/state", "0");
@@ -55,7 +55,7 @@ void loop(void){
     }
     else if (value == "1"){
       if(flag == 0){
-        myservo.write(130);
+        myservo.write(40);
         delay(1000);
         myservo.write(90);
         //Firebase.setString("Switch/a/state", "1");
