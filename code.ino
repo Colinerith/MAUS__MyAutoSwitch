@@ -3,8 +3,8 @@
 #include <ESP8266WiFi.h>
 #include <ESP8266WebServer.h>
 
-#define FIREBASE_HOST "host"
-#define FIREBASE_AUTH "pw" // 데이터베이스 비밀번호
+#define FIREBASE_HOST ""
+#define FIREBASE_AUTH "" // 데이터베이스 비밀번호
 
 FirebaseData firebaseData;
 //FirebaseJson json;
@@ -38,17 +38,17 @@ void setup(void){
 }
  
 void loop(void){
-  if (Firebase.getString(firebaseData, "User/a/state"))  {
+  if (Firebase.getString(firebaseData, "Switch/a/state"))  {
     String value = firebaseData.stringData(); // 값을 문자열로 받아와서 value에
     Serial.println(value); // 시리얼모니터에 값을 출력
     
     if (value == "1"){
       myservo.write(90);
-      //Firebase.setStringAsync(firebaseData, "User/a/state", "0");
+      //Firebase.setStringAsync(firebaseData, "Switch/a/state", "0");
     }
     else if (value == "0"){
       myservo.write(0);
-      //Firebase.setString("User/a/state", "1");
+      //Firebase.setString("Switch/a/state", "1");
     }
   }
   else
