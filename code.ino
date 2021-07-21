@@ -36,22 +36,35 @@ void setup(void){
   myservo.attach(D5);   // Servo attached to D5 pin
   myservo.write(0);
 }
- 
+int flag = 0; //0:off, 1:on
+
 void loop(void){
   if (Firebase.getString(firebaseData, "Switch/a/state"))  {
     String value = firebaseData.stringData(); // 값을 문자열로 받아와서 value에
-    Serial.println(value); // 시리얼모니터에 값을 출력
-    
+    //Serial.println(value); // 시리얼모니터에 값을 출력
+    //Serial.println(myservo.read());
     if (value == "0"){
-      myservo.write(60);
+      if(flag == 1){ // on에서 off로 바뀐거면
+        myservo.write(30);
+        delay(1000);
+        myservo.write(90);
+        //Firebase.setStringAsync(firebaseData, "Switch/a/state", "0");
+        flag = 0;
+      }
+      // 계속 off인 상태면 무시
     }
     else if (value == "1"){
-      myservo.write(0);
+      if(flag == 0){
+        myservo.write(120);
+        delay(1000);
+        myservo.write(90);
+        //Firebase.setString("Switch/a/state", "1");
+        flag = 1;
+      }
     }
   }
-  else
-  {
+  else{
     Serial.println(firebaseData.errorReason()); // 에러 메시지 출력
   }
-  delay(500); // 0.5초마다 반복
+  delay(1000); // 1초마다 반복
 } 
