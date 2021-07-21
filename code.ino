@@ -43,7 +43,7 @@ void loop(void){
     Serial.println(value); // 시리얼모니터에 값을 출력
     
     if (value == "0"){
-      myservo.write(80);
+      myservo.write(60);
     }
     else if (value == "1"){
       myservo.write(0);
