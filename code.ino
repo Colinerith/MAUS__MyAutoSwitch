@@ -1,7 +1,7 @@
 #include "FirebaseESP8266.h" // 파이어베이스 라이브러리
 #include <Servo.h>
 #include <ESP8266WiFi.h>
-#include <ESP8266WebServer.h>
+//#include <ESP8266WebServer.h>
 
 #define FIREBASE_HOST ""
 #define FIREBASE_AUTH "" // 데이터베이스 비밀번호
