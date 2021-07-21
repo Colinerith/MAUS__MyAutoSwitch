@@ -42,13 +42,11 @@ void loop(void){
     String value = firebaseData.stringData(); // 값을 문자열로 받아와서 value에
     Serial.println(value); // 시리얼모니터에 값을 출력
     
-    if (value == "1"){
-      myservo.write(90);
-      //Firebase.setStringAsync(firebaseData, "Switch/a/state", "0");
+    if (value == "0"){
+      myservo.write(80);
     }
-    else if (value == "0"){
+    else if (value == "1"){
       myservo.write(0);
-      //Firebase.setString("Switch/a/state", "1");
     }
   }
   else
@@ -56,5 +54,4 @@ void loop(void){
     Serial.println(firebaseData.errorReason()); // 에러 메시지 출력
   }
   delay(500); // 0.5초마다 반복
-
 } 
