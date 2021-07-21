@@ -45,7 +45,7 @@ void loop(void){
     //Serial.println(myservo.read());
     if (value == "0"){
       if(flag == 1){ // on에서 off로 바뀐거면
-        myservo.write(30);
+        myservo.write(40);
         delay(1000);
         myservo.write(90);
         //Firebase.setStringAsync(firebaseData, "Switch/a/state", "0");
@@ -55,7 +55,7 @@ void loop(void){
     }
     else if (value == "1"){
       if(flag == 0){
-        myservo.write(120);
+        myservo.write(130);
         delay(1000);
         myservo.write(90);
         //Firebase.setString("Switch/a/state", "1");
