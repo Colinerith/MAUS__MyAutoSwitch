@@ -1,9 +1,8 @@
 #include "FirebaseESP8266.h" // 파이어베이스 라이브러리
 #include <Servo.h>
 #include <ESP8266WiFi.h>
-//#include <ESP8266WebServer.h>
 
-#define FIREBASE_HOST "/"
+#define FIREBASE_HOST ""
 #define FIREBASE_AUTH "" // 데이터베이스 비밀번호
 
 FirebaseData firebaseData;
@@ -41,25 +40,29 @@ int flag = 0; //0:off, 1:on
 void loop(void){
   if (Firebase.getString(firebaseData, "Switch/a/state"))  {
     String value = firebaseData.stringData(); // 값을 문자열로 받아와서 value에
-    //Serial.println(value); // 시리얼모니터에 값을 출력
-    //Serial.println(myservo.read());
     if (value == "0"){
       if(flag == 1){ // on에서 off로 바뀐거면
+        myservo.attach(D5);
         myservo.write(130);
         delay(1000);
         myservo.write(90);
         //Firebase.setStringAsync(firebaseData, "Switch/a/state", "0");
         flag = 0;
+        delay(1000);
+        myservo.detach();
       }
       // 계속 off인 상태면 무시
     }
     else if (value == "1"){
       if(flag == 0){
-        myservo.write(40);
+        myservo.attach(D5);
+        myservo.write(35);
         delay(1000);
         myservo.write(90);
         //Firebase.setString("Switch/a/state", "1");
         flag = 1;
+        delay(1000);
+        myservo.detach();
       }
     }
   }
