@@ -14,4 +14,4 @@ DAY10. Timer Fragment - Add / Modify Timer
 DAY11. Timer Fragment - Delete Timer  
 
 
-[Android]<https://github.com/hjinha18/MAUS_Android>
+[Android](https://github.com/hjinha18/MAUS_Android)
